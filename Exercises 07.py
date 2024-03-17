@@ -125,9 +125,7 @@ county_scores = df_sch.groupby('county')['scores'].agg(['max', 'min', 'mean'])
 print(f"District scores:\n{district_scores}")
 print(f"\nCounty scores:\n{county_scores}")
 
-"""13. Create a MultiIndex DataFrame with the schools using the columns `school` and `county`. Stack this DataFrame. What is the Income of the first five schools? What are their names?
-
-14. Group the DataFrame by Counties. For each County, sort the Dataframe using `scores` in descending together.
+"""13. Group the DataFrame by Counties. For each County, sort the Dataframe using `scores` in descending together.
 """
 
 sorted_scores = df_sch.groupby('county').apply(lambda x: x.sort_values(by='scores', ascending=False))
